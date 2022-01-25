@@ -9,7 +9,7 @@ import javax.persistence.Entity;
 @Entity @DiscriminatorValue("ens")
 public class EnseignantChercheur extends Membre implements Serializable{
 	private String grade ,etablissement;
-	
+	private String role="ROLE_Enseignant";
 	
 	public EnseignantChercheur() {
 		super();
@@ -22,6 +22,7 @@ public class EnseignantChercheur extends Membre implements Serializable{
 		super( cin, nom, prenom, email, cv, password, date);
 		this.grade = grade;
 		this.etablissement = etablissement;
+		this.role="ROLE_Enseignant";
 	}
 
 

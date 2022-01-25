@@ -10,6 +10,7 @@ import javax.persistence.ManyToOne;
 public class Etudiant extends Membre implements Serializable{
 	private String diplome;
 	private Date date;	
+	private String role="ROLE_Etudiant";
 	@ManyToOne
 	private EnseignantChercheur encadrant;
 	
@@ -23,6 +24,8 @@ public class Etudiant extends Membre implements Serializable{
 		this.diplome = diplome;
 		date = date2;
 		this.encadrant = encadrant;
+		this.role="Etudiant";
+
 	}
 
 

@@ -120,4 +120,15 @@ public class MembreRestController {
 	return mbr;
 	}
 
+	@GetMapping("/fullmember/{id}")
+	public Membre findAFullMember(@PathVariable(name="id") Long id)
+	{
+		Membre mbr=iMembreServices.findMember(id);
+		mbr.setOutils(iMembreServices.findOutilparauteur(id));
+		mbr.setEvents(iMembreServices.findEvenementparauteur(id));
+
+		mbr.setPubs(iMembreServices.findPublicationparauteur(id));
+
+		return mbr;
+	}
 }
